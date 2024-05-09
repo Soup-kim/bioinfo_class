@@ -15,11 +15,19 @@ merged_int = merged[merged['type'] == 'integral membrane']
 merged_nu = merged[merged['type'] == 'nucleus']
 merged_cyt = merged[merged['type'] == 'cytoplasm']
 
-# integral membrane 먼저 그려보기
+# type별 산점도 그리기
 from matplotlib import pyplot as plt
 import numpy as np
 
 x_i = np.log2(merged_int['clip_enrichment'])
 y_i = np.log2(merged_int['rden_change'])
 
+x_n = np.log2(merged_nu['clip_enrichment'])
+y_n = np.log2(merged_nu['rden_change'])
+
+x_c = np.log2(merged_cyt['clip_enrichment'])
+y_c = np.log2(merged_cyt['rden_change'])
+
 plt.scatter(x_i, y_i, s=1, alpha =.4, color = 'r', label = 'integral membrane')
+plt.scatter(x_n, y_n, s=1, alpha =.4, color = 'b', label = 'nucleus')
+plt.scatter(x_c, y_c, s=1, alpha =.4, color = 'g', label = 'cytoplasm')
