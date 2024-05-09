@@ -8,3 +8,4 @@ merged.head()
 # type 종류 확인
 unique_values = merged['type'].unique()
 print(unique_values)
+#  = ['integral membrane' 'nucleus' 'cytoplasm']
