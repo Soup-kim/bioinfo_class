@@ -9,3 +9,8 @@ merged.head()
 unique_values = merged['type'].unique()
 print(unique_values)
 #  = ['integral membrane' 'nucleus' 'cytoplasm']
+
+# type별로 분류
+merged_int = merged[merged['type'] == 'integral membrane']
+merged_nu = merged[merged['type'] == 'nucleus']
+merged_cyt = merged[merged['type'] == 'cytoplasm']
