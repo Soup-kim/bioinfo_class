@@ -29,12 +29,12 @@ x_c = np.log2(merged_cyt['clip_enrichment'])
 y_c = np.log2(merged_cyt['rden_change'])
 
 fig, pl = plt.subplots(figsize=(5, 5))
-pl.scatter(x_i, y_i, s=1, alpha =.4, color = 'r', label = 'integral membrane')
-pl.scatter(x_n, y_n, s=1, alpha =.4, color = 'b', label = 'nucleus')
-pl.scatter(x_c, y_c, s=1, alpha =.4, color = 'g', label = 'cytoplasm')
+pl.scatter(x_i, y_i, s=2, alpha =.3, color = 'r', label = 'integral membrane')
+pl.scatter(x_n, y_n, s=2, alpha =.3, color = 'b', label = 'nucleus')
+pl.scatter(x_c, y_c, s=2, alpha =.3, color = 'g', label = 'cytoplasm')
 
 
 pl.grid()
 pl.set_xlabel('CLIP enrichment (log₂)')
 pl.set_ylabel('Ribosome density change (log₂)')
-pl.legend(markerscale=3)
+pl.legend()
