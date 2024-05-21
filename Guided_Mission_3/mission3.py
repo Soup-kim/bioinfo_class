@@ -19,3 +19,11 @@ def shannon_entropy(base_counts):
 # 각 position별 Shannon entropy
 entropies = base_counts.apply(shannon_entropy, axis=1)
 entropies.head(30)
+
+#bedgraph
+bedgraph = pd.DataFrame({
+    'chrom': 'chr9',
+    'start': pileup['pos'] - 1,
+    'end': pileup['pos'],
+    'entropy': entropies
+})
