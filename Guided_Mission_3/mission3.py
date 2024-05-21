@@ -27,3 +27,6 @@ bedgraph = pd.DataFrame({
     'end': pileup['pos'],
     'entropy': entropies
 })
+
+#file 
+bedgraph.to_csv('7g_entropy.bedgraph', sep='\t', index=False, header=False)
