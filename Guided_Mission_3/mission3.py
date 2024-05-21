@@ -31,7 +31,12 @@ def shannon_entropy(base_counts):
 
 # 각 position별 Shannon entropy
 entropies = base_counts.apply(shannon_entropy, axis=1)
-entropies.head(30)
+
+# entropies를 CSV 파일로 읽기
+import pandas as pd
+
+entropies.to_csv('entropies.csv', header=True, index=True)
+entropiess = pd.read_csv('entropies.csv', sep=',')
 
 #bedgraph
 bedgraph = pd.DataFrame({
