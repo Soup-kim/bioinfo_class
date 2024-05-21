@@ -43,7 +43,7 @@ bedgraph = pd.DataFrame({
     'chrom': 'chr9',
     'start': pileup['pos'] - 1,
     'end': pileup['pos'],
-    'entropy': entropies
+    'entropy': entropiess['ent']
 })
 
 #file 
