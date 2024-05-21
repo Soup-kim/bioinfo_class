@@ -46,5 +46,14 @@ bedgraph = pd.DataFrame({
     'entropy': entropiess['ent']
 })
 
+bedgraph = bedgraph.iloc[:-1]
+
+bedgraph['start'] = bedgraph['start'].astype(int)
+bedgraph['end'] = bedgraph['end'].astype(int)
+
+with open('7g_entropy.bedgraph', 'w') as f:
+    f.write('track type=bedGraph\n')
+    bedgraph.to_csv(f, sep='\t', index=False, header=False, mode='a')
+
 #file 
 bedgraph.to_csv('7g_entropy.bedgraph', sep='\t', index=False, header=False)
