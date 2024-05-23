@@ -57,3 +57,15 @@ with open('7g_entropy.bedgraph', 'w') as f:
 
 #file 
 bedgraph.to_csv('7g_entropy.bedgraph', sep='\t', index=False, header=False)
+
+# mirlet7d, 7f-1는 같은 코드를 수정하여 구하였습니다.
+# 데이터 차이가 나는 건 확인하였는데 차이점이 어떤 의미를 가지는지는 모르겠습니다.
+
+#mirlet7d는 acgt 대소문자 변환 코드 추가
+#대소문자 변환
+def filter_bases(matches):
+    return ''.join(base for base in matches.upper() if base in 'ACGT')
+
+pileup['matches'] = pileup['matches'].apply(filter_bases)
+
+#
